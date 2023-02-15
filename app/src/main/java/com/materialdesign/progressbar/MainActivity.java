@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 		progress_horizontal = findViewById(R.id.progress_horizontal);
 		progress_horizontal.setVisibility(View.GONE);
 		progress_horizontal.setProgress(0);
+		progress_horizontal.setSecondaryProgress(0);
 		progress_horizontal.setMax(100);
 
 		new AsyncCircular().execute();
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 		@Override
 		protected void onProgressUpdate(Integer... values) {
 			progress_horizontal.setProgress(values[0]);
+			progress_horizontal.setSecondaryProgress(values[0] + 15);
 		}
 
 		@Override
